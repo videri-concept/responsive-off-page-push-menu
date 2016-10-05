@@ -1,0 +1,78 @@
+@import "compass/css3";
+$brand-color: #29cade;
+
+html, body {
+    height: 100%;
+}
+body {
+
+	&.menu-is-open {
+		overflow: hidden;
+
+		.page-wrap {
+			position: relative;
+			z-index: 99999;
+			@include transition(0.4s linear);
+			@include transform(translateX(320px));
+		}
+
+		.menu-overlay {
+			display: block;
+		}
+
+		.menu-btn {
+
+			span {
+				width: 0;
+				@include transition(0.4s linear);
+			}
+		}
+
+		.header {
+			@include transition(0.4s linear);
+			@include transform(translateX(320px));
+		}
+
+		nav.left-side-menu {
+
+			.menu-header {
+
+				.menu-closer {
+					cursor: pointer;
+
+					span {
+						width: 25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-wrap {
+	min-height: 100%;
+	// equal to footer height for STICKY FOOTER
+	// margin-bottom: 50px;
+	@include transition(0.4s linear);
+}
+
+.hero {
+    background-image: url(../../assets/images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: -1;
+
+    h1 {
+		color: $brand-color;
+		font-style: italic;
+		font-weight: 700;
+		font-size: 65px;
+		margin-top: 40vh;
+		position: relative;
+	}
+}
